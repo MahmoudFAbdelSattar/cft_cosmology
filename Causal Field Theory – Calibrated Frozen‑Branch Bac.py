@@ -150,13 +150,11 @@ def integrate_background():
     Omega_phi = rho_phi_arr[idx] / (H_today**2)
     w0 = ((0.5 * v_arr[idx]**2 - potential(phi_arr[idx]))
           / max(1e-12, 0.5 * v_arr[idx]**2 + potential(phi_arr[idx])))
-    phi_today = phi_arr[idx]
 
     return {
         "a": a_arr, "phi": phi_arr, "v": v_arr, "rho_m": rho_m_arr,
         "t": t_arr, "z": z_arr, "H": H_arr, "rho_phi": rho_phi_arr,
-        "H_today": H_today, "Omega_phi": Omega_phi, "w0": w0,
-        "phi_today": phi_today
+        "H_today": H_today, "Omega_phi": Omega_phi, "w0": w0
     }
 
 
@@ -230,7 +228,6 @@ if __name__ == "__main__":
     print(f"  H₀       = {solution['H_today']:.4f}")
     print(f"  Ω_φ      = {solution['Omega_phi']:.4f}")
     print(f"  w₀       = {solution['w0']:.4f}")
-    print(f"  φ₀       = {solution['phi_today']:.6f}")
     if solution["w0"] < -0.9:
         print("  ✓ Frozen branch confirmed.")
     else:
