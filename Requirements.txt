@@ -1,0 +1,7 @@
+# Requirements for Causal Field Theory cosmological analysis code
+# Python 3.7+
+
+numpy>=1.20.0
+scipy>=1.6.0
+pandas>=1.2.0
+matplotlib>=3.4.0
